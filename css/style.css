@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+.modal {
+  visibility: hidden;
+}
+.show-modal {
+  visibility: visible;
+  height: 9rem;
+  width: 26rem;
+  text-align: center;
+  left: 29%;
+  top: 21%;
+  z-index: 1;
+  position: absolute;
+  background: white;
+}
