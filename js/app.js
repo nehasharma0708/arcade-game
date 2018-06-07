@@ -1,5 +1,6 @@
-let modal = document.getElementById("modal");
-let message = document.getElementById("message");
+'use strict';
+let modal = document.getElementById('modal');
+let message = document.getElementById('message');
 
 // Enemies our player must avoid
 var Enemy = function(x,y) {
@@ -24,9 +25,8 @@ Enemy.prototype.update = function(dt) {
   }
   else {this.x = -90;}
   if (this.x < player.x + 30 && this.x + 60 > player.x  && this.y < player.y + 60 && this.y + 40> player.y) {
-    console.log("Game Over");
-    message.textContent = "Game Over!"
-    modal.classList.add("show-modal");
+    message.textContent = 'Game Over!';
+    modal.classList.add('show-modal');
     allEnemies = [];
   }
 };
@@ -54,17 +54,16 @@ var Player = function () {
 Player.prototype.update = function() {
 
   // If the player reaches the water
-  if (player.y < 20) {
-    console.log("Won the game");
-    message.textContent = "Congratulations! You Won!"
-    modal.classList.add("show-modal");
+  if (this.y < 20) {
+    message.textContent = 'Congratulations! You Won!';
+    modal.classList.add('show-modal');
     allEnemies = [];
 
   }
 };
 
 function playAgain () {
-  modal.classList.remove("show-modal");
+  modal.classList.remove('show-modal');
   allEnemies = [enemy1, enemy2, enemy3, enemy4];
   player.reset();
 }
